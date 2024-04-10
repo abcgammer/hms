@@ -1,3 +1,4 @@
+
 import express from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
@@ -17,7 +18,9 @@ app.use(cors({
         "https://hms-frontendbpbiplap.vercel.app",
         "https://hms-dashboard-by-biplap.vercel.app",
         "https://hospital-management-system-j8qm.onrender.com",
-        "*"
+        "*",
+        process.env.FRONTEND_URI,
+        process.env.DASHBOARD_URL,
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
