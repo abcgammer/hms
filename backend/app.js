@@ -15,10 +15,13 @@ import appointmentRouter from './router/appointmentRouter.js';
 const app = express();
 config({path:"./config/config.env"});
 app.use(cors({
-    origin: '*',
+    origin: 'https://hms-frontendbpbiplap.vercel.app',
+    'https://hms-dashboard-by-biplap.vercel.app',
+    '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
+
 
 app.use(cookieParser());
 app.use(express.json());
