@@ -17,6 +17,8 @@ const [formdata, setFormdata] = useState({
     dob : '',
     gender : '',
   });
+  // 'http://localhost:4000/api/v1/user/patient/register'
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/patient/register";
 
 const {
     firstName,
@@ -40,7 +42,7 @@ const navigate = useNavigate();
 const handleRegister = async (e) => {
 e.preventDefault();
 try {
-  const response = await axios.post('http://localhost:4000/api/v1/user/patient/register',{...formdata, role:"Patient"},{
+  const response = await axios.post(url,{...formdata, role:"Patient"},{
     withCredentials: true,
     headers: {
       'Content-Type': 'application/json'

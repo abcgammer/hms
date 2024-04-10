@@ -16,6 +16,13 @@ const AppointmentForm = () => {
   const [doctorLastName, setDoctorLastName] = useState("");
   const [address, setAddress] = useState("");
   const [hasVisited, setHasVisited] = useState(false);
+  // http://localhost:4000/api/v1/user/doctors",
+  const url1 = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/doctors";
+  
+  // "http://localhost:4000/api/v1/appointment/post"
+  const url2 = "https://hospital-management-system-j8qm.onrender.com/api/v1/appointment/post";
+
+
 
   const departmentsArray = [
     "Pediatrics",
@@ -41,8 +48,7 @@ const AppointmentForm = () => {
     const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     const fetchDoctors = async () => {
-      const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+      const { data } = await axios.get(url1,
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -54,8 +60,7 @@ const AppointmentForm = () => {
   const handleAppointment = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/api/v1/appointment/post",
+      const { data } = await axios.post(url2,
         {
           firstName,
           lastName,

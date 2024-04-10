@@ -17,10 +17,13 @@ import Footer from './pages/Footer';
 
 function App() {
   const {isAuthenticated, setIsAuthenticated,  setUser } = useContext(Context);
+
+  // 'http://localhost:4000/api/v1/user/patient/me'
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/patient/me";
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/v1/user/patient/me', {
+        const response = await axios.get(url, {
           withCredentials: true
         });
         if(response.data.success) {

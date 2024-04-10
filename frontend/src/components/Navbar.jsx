@@ -15,9 +15,11 @@ const Navbar = () => {
     const gotoLogin = () => {
         navigate('/login');
     }
+    // 'http://localhost:4000/api/v1/user/patient/logout'
+    const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/patient/logout";
 
     const handleLogout = async() => {
-            await axios.get('http://localhost:4000/api/v1/user/patient/logout', {
+            await axios.get(url, {
                 withCredentials: true
             }).then((res) => {
                 toast.success(res.data.message);

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+
 const MessageForm = () => {
   let data = {
     firstName: '',
@@ -10,6 +11,7 @@ const MessageForm = () => {
     phone: '',
     message: ''
   };
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/message/send";
 
   const [formData, setFormData] = useState(data);
 
@@ -22,7 +24,7 @@ const MessageForm = () => {
   const handleMessage = async(e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:4000/api/v1/message/send', formData, {
+      await axios.post( url, formData, {
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
