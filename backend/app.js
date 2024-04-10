@@ -18,6 +18,7 @@ app.use(cors({
     origin: 'https://hms-frontendbpbiplap.vercel.app',
     'https://hms-dashboard-by-biplap.vercel.app',
     '*',
+    'https://hospital-management-system-j8qm.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
