@@ -40,6 +40,7 @@ const Navbar = () => {
                 <Link  to="/">Home</Link>
                 <Link to="/appointment">Appointment</Link>
                 <Link to="/about">About Us</Link>
+                <Link to="https://hms-dashboard-by-biplap.vercel.app/">Admin</Link>
             </div>
             {isAuthenticated ? (<button className="logoutBtn btn" onClick={handleLogout}>Logout</button> ): (<button className="logoutBtn btn" onClick={gotoLogin}>Login</button>)            }
         </div>
