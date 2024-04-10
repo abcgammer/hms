@@ -9,11 +9,14 @@ import { Navigate } from 'react-router-dom'
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
   const { isAuthenticated } = useContext(Context);
+  // "http://localhost:4000/api/v1/user/doctors"
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/doctors";
+
 
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const {data} = await axios.get("http://localhost:4000/api/v1/user/doctors", {
+        const {data} = await axios.get(url, {
           withCredentials: true
         });
         setDoctors(data.doctors);

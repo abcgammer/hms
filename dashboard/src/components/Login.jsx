@@ -19,6 +19,9 @@ const {email, password} = formdata;
 const handleChange = (e) => {
     setFormdata({...formdata, [e.target.id]: e.target.value});
 }
+// 'http://localhost:4000/api/v1/user/login'
+const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/login";
+
 
 
 const navigate = useNavigate();
@@ -26,7 +29,7 @@ const navigate = useNavigate();
 const handleLogin = async (e) => {
 e.preventDefault();
 try {
-  const response = await axios.post('http://localhost:4000/api/v1/user/login',{ ...formdata, role: 'Admin' },{
+  const response = await axios.post(url,{ ...formdata, role: 'Admin' },{
     withCredentials: true,
     headers: {
       'Content-Type': 'application/json'

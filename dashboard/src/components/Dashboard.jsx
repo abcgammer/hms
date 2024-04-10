@@ -13,14 +13,18 @@ const Dashboard = () => {
 
   const [appointments, setAppointments] = useState([]);
   const [doctors, setDoctors] = useState([]);
+  // 'http://localhost:4000/api/v1/appointment/getall'
+  const url1 = "https://hospital-management-system-j8qm.onrender.com/api/v1/appointment/getall";
+  // 'http://localhost:4000/api/v1/user/doctors'
+  const url2 = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/doctors";
 
   useEffect(() => {
     const fetchAppointmentsAndDoctors = async () => {
       try {
-        const appointmentsResponse = await axios.get('http://localhost:4000/api/v1/appointment/getall', {
+        const appointmentsResponse = await axios.get(url1, {
           withCredentials: true
         });
-        const doctorsResponse = await axios.get('http://localhost:4000/api/v1/user/doctors', {
+        const doctorsResponse = await axios.get(url2, {
           withCredentials: true
         });
         setAppointments(appointmentsResponse.data.appointments);
@@ -38,7 +42,7 @@ const Dashboard = () => {
   const handleStatusChange = async (appointmentId, status) => {
   try {
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+      `https://hospital-management-system-j8qm.onrender.com/api/v1/appointment/update/${appointmentId}`,
       { status },
       {
         withCredentials: true,

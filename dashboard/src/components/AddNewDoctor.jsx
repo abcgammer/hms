@@ -37,6 +37,8 @@ const AddNewDoctor = () => {
       toast.success("Avatar Uploaded Successfully");
     };
   };
+  // "http://localhost:4000/api/v1/user/doctor/addnew"
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/doctor/addnew";
   
 
   const handleAddNewDoctor = async (e) => {
@@ -53,7 +55,7 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-        .post("http://localhost:4000/api/v1/user/doctor/addnew", formData, {
+        .post(url, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

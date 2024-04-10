@@ -15,10 +15,12 @@ const Sidebar = () => {
   const [show, setShow] = useState(false);
 
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  // "http://localhost:4000/api/v1/user/admin/logout"
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/admin/logout";
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
+      .get(url, {
         withCredentials: true,
       })
       .then((res) => {

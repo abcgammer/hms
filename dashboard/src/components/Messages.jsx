@@ -5,12 +5,15 @@ import {Navigate} from 'react-router-dom'
 import axios from 'axios'
 
 const Messages = () => {
+  // 'http://localhost:4000/api/v1/message/getall'
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/message/getall";
+
   const [messages, setMessages] = useState([])
   const {isAuthenticated, setIsAuthenticated} = useContext(Context);
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const {data} = await axios.get('http://localhost:4000/api/v1/message/getall', 
+        const {data} = await axios.get(url, 
           {
             withCredentials: true
           

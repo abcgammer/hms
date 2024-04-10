@@ -18,6 +18,8 @@ const [formdata, setFormdata] = useState({
     dob : '',
     gender : '',
   });
+  // 'http://localhost:4000/api/v1/user/admin/addnew'
+  const url = "https://hospital-management-system-j8qm.onrender.com/api/v1/user/admin/addnew";
 
 const {
     firstName,
@@ -38,7 +40,7 @@ const navigate = useNavigate();
 const handleAddNewAdmin = async (e) => {
 e.preventDefault();
 try {
-  const response = await axios.post('http://localhost:4000/api/v1/user/admin/addnew',{ ...formdata, role: "Admin"},
+  const response = await axios.post(url,{ ...formdata, role: "Admin"},
   {
     withCredentials: true,
     headers: {
